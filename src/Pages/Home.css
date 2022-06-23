@@ -1,0 +1,10 @@
+.Home{
+    background-color: black;
+    height: fit-content;
+    padding: 0px 30px;
+}
+.post-list{
+    display: flex;
+   
+    flex-wrap: wrap;
+}

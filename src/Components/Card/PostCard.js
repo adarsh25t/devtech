@@ -29,13 +29,25 @@ const ExpandMore = styled((props) => {
 
 export default function PostCard() {
   const [expanded, setExpanded] = React.useState(false);
+  const [title, setTitle] = React.useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, ab fugiat id nisi odio delectus?");
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  
+
+  const showTitle = () =>{
+    console.log(title.toString().slice(5));
+
+    return(
+      <Typography  color="text.secondary" className='post-title'>
+      
+      </Typography>
+    )
+  }
 
   return (
-    <Card sx={{ maxWidth: 280 }} style={{margin:'10px',padding:'10px'}}>
+    <Card sx={{ maxWidth: 280 }} className="postCard">
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -50,6 +62,11 @@ export default function PostCard() {
         title=""
         subheader=""
       />
+
+      <CardContent>
+        {showTitle()}
+      </CardContent>
+
       <CardMedia
         component="img"
         height="174"
@@ -57,11 +74,7 @@ export default function PostCard() {
         alt="Paella dish"
         className='post-image'
       />
-      <CardContent>
-        <Typography  color="text.secondary" className='post-title'>
-            Node JS 101: What is Node Js
-        </Typography>
-      </CardContent>
+      
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
